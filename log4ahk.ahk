@@ -13,7 +13,7 @@ class log4ahk
   static RootLogger := new log4ahk.logger
   static logger_builder := new log4ahk.default_logger_builder
    
-  getLogger(name = "")
+  getLogger(name := "")
   {
     if (name == "")
     {
@@ -50,11 +50,11 @@ class log4ahk
     appenders := []
     parent    := ""
   
-    __New(name = "")
+    __New(name := "")
     {
       this.name  := name
       appender := new log4ahk.appender
-      this.appenders.Insert(appender)
+      this.appenders.push(appender)
     }
     
     trace(message)
@@ -206,7 +206,7 @@ class log4ahk
     threshold      := ""
     requiresLayout := true
     
-    __New(name = "")
+    __New(name := "")
     {
       this.name  := name
       if (this.requiresLayout)
@@ -244,7 +244,7 @@ class log4ahk
     file    := ""
     fp      := ""
     
-    __New(name = "")
+    __New(name := "")
     {
       base.__New(name)
     }
@@ -284,7 +284,7 @@ class log4ahk
   {
     events := []
 
-    __New(name = "")
+    __New(name := "")
     {
       this.name  := name
     }
